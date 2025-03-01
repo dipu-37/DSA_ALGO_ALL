@@ -1,42 +1,44 @@
 
 #include <bits/stdc++.h>
 using namespace std;
+
 /// brute force
-//pair<int,int> TwoSumProblem(int arr[],int n,int terget)
-//{
-//    for(int i=0; i<n; i++)
-//    {
-//        for(int j=0; j<n; j++)
-//        {
-//            if(i==j) continue;
-//            if(arr[i]+arr[j]==terget)
-//            {
-//                return {i,j};
-//            }
-//        }
-//    }
-//}
+
+pair<int,int> TwoSumProblem(int arr[],int n,int terget)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(i==j) continue;
+            if(arr[i]+arr[j]==terget)
+            {
+                return {i,j};
+            }
+        }
+    }
+}
 
 /// better
 
-// pair<int,int> TwoSumProblem(int arr[],int n,int terget)
-//{
-//    map<int,int>m;
-//    for(int i=0;i<n;i++)
-//    {
-//        int a = arr[i];
-//        int b= terget-a;
-//        if(m.find(b) !=m.end())
-//        {
-//           /// return "YES";
-//           return {m[b],i};
-//
-//        }
-//        m[a]=i;
-//    }
-//    /// return "NO";
-//    return{-1,-1};
-//}
+pair<int,int> TwoSumProblem(int arr[],int n,int terget)
+{
+    map<int,int>m;
+    for(int i=0; i<n; i++)
+    {
+        int a = arr[i];
+        int b= terget-a;
+        if(m.find(b) !=m.end())
+        {
+            /// return "YES";
+            return {m[b],i};
+
+        }
+        m[a]=i;
+    }
+    /// return "NO";
+    return{-1,-1};
+}
 
 /// optimal for verity =1 ; yes no
 
@@ -47,13 +49,16 @@ string TwoSumProblem(int arr[],int n,int terget)
     while(left<right)
     {
         int sum = arr[left]+arr[right];
-        if(sum == terget){
+        if(sum == terget)
+        {
             return "YES";
         }
-        else if(sum < terget){
+        else if(sum < terget)
+        {
             left ++;
         }
-        else{
+        else
+        {
             right++;
         }
     }
@@ -71,7 +76,10 @@ int main()
         cin>>arr[i];
     }
 
-   string result= TwoSumProblem(arr,n,terget);
+    pair<int,int>p= TwoSumProblem(arr,n,terget);
+    cout<<p.first<<p.second<<endl;
+
+    string result= TwoSumProblem(arr,n,terget);
     cout<<result<<endl;
 }
 

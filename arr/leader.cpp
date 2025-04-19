@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/// brute force
 vector<int> printLeadersBruteForce(int arr[], int n)
 {
     vector<int>ans;
@@ -29,7 +30,7 @@ vector<int> printLeadersBruteForce(int arr[], int n)
     return ans;
 
 }
-
+/// optimal approach
 vector<int> printLeadersOptimal(int arr[],int n)
 {
     vector<int>ans;

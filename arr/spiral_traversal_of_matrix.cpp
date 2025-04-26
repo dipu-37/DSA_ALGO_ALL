@@ -12,7 +12,7 @@ vector<int> printSpiral( vector<vector<int>>&mat)
     while(top<=bottom && left <= right)
     {
         ///right
-        for(int i=left; i<=right;i++)
+        for(int i=left; i<=right; i++)
         {
             ans.push_back(mat[top][i]);
         }
@@ -38,8 +38,10 @@ vector<int> printSpiral( vector<vector<int>>&mat)
 
         /// top
 
-        if(left<=right){
-            for(int i=right;i>=left;i--){
+        if(left<=right)
+        {
+            for(int i=right; i>=left; i--)
+            {
                 ans.push_back(mat[bottom][i]);
             }
             left++;
@@ -62,4 +64,10 @@ int main()
         }
     }
     vector<int>ans = printSpiral(mat);
+    for(int i = 0; i<ans.size(); i++)
+    {
+
+        cout<<ans[i]<<" ";
+    }
+
 }

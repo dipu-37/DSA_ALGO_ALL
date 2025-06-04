@@ -77,9 +77,23 @@ int main()
     funct(z);
     cout<<z<<endl; // 300
 
+    /// constant variable pointer
+
+    const int c=10;
+    const int *ptrr=&c;
+    //*ptrr = 200; not posible
+    cout<<ptrr<<" "<<*ptrr<<endl;
+
     /// constant pointer
 
+    int d=10;
+    int * const ptrrr= &d;
 
+    /// constant variable constant pointer
 
+    const int e=10;
+    const int * const ptrrrr = &a;
+
+    ///
 
 }

@@ -94,6 +94,4 @@ int main()
     const int e=10;
     const int * const ptrrrr = &a;
 
-    ///
-
 }
